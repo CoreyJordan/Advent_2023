@@ -9,23 +9,22 @@ public class Navigate {
         ArrayList<String> inpuStrings = reader.getLines();
 
         ArrayList<Node> nodes = reader.mapNodes(inpuStrings);
-
-        Node atNode = nodes.get(0);
-        for (Node node : nodes) {
-            if (node.getNodeIn() == "AAA") {
-                atNode = node;
+        Node atNode = nodes.getLast();
+        for (int i = 0; i < nodes.size(); i++) {
+            if (nodes.get(i).getNodeIn().equals("AAA")) {
+                atNode = nodes.get(i);
             }
         }
         String directions = inpuStrings.get(0);
         int step = 0;
         int index = 0;
-        while (atNode.getNodeIn() != "ZZZ") {
+        while (!atNode.getNodeIn().equals("ZZZ")) {
             String findNode = switch (directions.charAt(index)) {
                 case 'L' -> atNode.getLeftOut();
                 default -> atNode.getRightOut();
             };
             for (Node node : nodes) {
-                if (node.getNodeIn() == findNode) {
+                if (node.getNodeIn().equals(findNode)) {
                     atNode = node;
                 }
             }
