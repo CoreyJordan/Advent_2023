@@ -2,7 +2,7 @@ package cubeConundrum;
 
 import java.util.ArrayList;
 
-import Data.FileReader;
+import data.FileReader;
 
 public class CubeConundrum {
     public static void main(String[] args) throws Exception {

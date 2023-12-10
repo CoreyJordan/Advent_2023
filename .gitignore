@@ -23,10 +23,11 @@
 hs_err_pid*
 replay_pid*
 
-# input files
-seedMap.txt
-schematic.txt
-
 # Visual Studio Code
 .vscode/
 .code-workspace
+
+# input files
+seedMap.txt
+schematic.txt
+races.txt

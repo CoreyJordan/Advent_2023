@@ -2,7 +2,7 @@ package gearRatios;
 
 import java.util.ArrayList;
 
-import Data.FileReader;
+import data.FileReader;
 
 public class GearRatios {
     public static void main(String[] args) throws Exception {
