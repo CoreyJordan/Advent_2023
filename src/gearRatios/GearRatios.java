@@ -6,7 +6,7 @@ import Data.FileReader;
 
 public class GearRatios {
     public static void main(String[] args) throws Exception {
-        FileReader engSpec = new FileReader("schematic.txt");
+        FileReader engSpec = new FileReader("inputs/schematic.txt");
         ArrayList<String> specRows = engSpec.getLines();
 
         ArrayList<PartNumber> numbers = new ArrayList<>();
