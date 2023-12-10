@@ -2,6 +2,8 @@ package cubeConundrum;
 
 import java.util.ArrayList;
 
+import Data.FileReader;
+
 public class CubeConundrum {
     public static void main(String[] args) throws Exception {
         final Show POSSIBLE = new Show(12, 13, 14);
