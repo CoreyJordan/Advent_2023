@@ -28,7 +28,4 @@ replay_pid*
 .code-workspace
 
 # input files
-seedMap.txt
-schematic.txt
-races.txt
-values.txt
+*txt
