@@ -26,6 +26,7 @@ public class FileReader {
         return fileLines;
     }
 
+    // Test
     public ArrayList<Integer> findNumbers(String s) {
         ArrayList<Integer> list = new ArrayList<>();
         Pattern pattern = Pattern.compile("\\d+");
