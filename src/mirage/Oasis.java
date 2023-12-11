@@ -2,6 +2,7 @@ package mirage;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Oasis {
     public static void main(String[] args) throws FileNotFoundException {
@@ -13,6 +14,7 @@ public class Oasis {
         for (int i = 0; i < histories.size(); i++) {
             // Get readings from the history and add to list of sequences
             ArrayList<Long> history = reader.findReadings(histories.get(i));
+            Collections.reverse(history);
             ArrayList<ArrayList<Long>> sequenceLists = new ArrayList<>();
             sequenceLists.add(history);
 
