@@ -1,18 +1,13 @@
 package mirage;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class Oasis {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         OasisReader reader = new OasisReader("inputs/readings.txt");
 
-        ArrayList<String> histories = new ArrayList<>() {
-            {
-                add("0 3 6 9 12 15");
-                add("1 3 6 10 15 21");
-                add("10 13 16 21 30 45");
-            }
-        };
+        ArrayList<String> histories = reader.getLines();
 
         long extrapolationsTotal = 0;
         for (int i = 0; i < histories.size(); i++) {
@@ -26,8 +21,11 @@ public class Oasis {
             while (!allZeroes) {
                 sequenceLists.add(plotDifferences(sequenceLists.getLast()));
 
-                if (listSum(sequenceLists.getLast()) == 0) {
-                    allZeroes = true;
+                allZeroes = true;
+                for (Long number : sequenceLists.getLast()) {
+                    if (number != 0) {
+                        allZeroes = false;
+                    }
                 }
             }
 
@@ -57,17 +55,11 @@ public class Oasis {
         ArrayList<Long> differences = new ArrayList<>();
 
         for (int i = 0; i < sequence.size() - 1; i++) {
-            differences.add(sequence.get(i + 1) - sequence.get(i));
+            long difference = sequence.get(i + 1) - sequence.get(i);
+            // difference = Math.abs(difference);
+            differences.add(difference);
         }
 
         return differences;
-    }
-
-    private static long listSum(ArrayList<Long> list) {
-        long sum = 0;
-        for (Long number : list) {
-            sum += number;
-        }
-        return sum;
     }
 }

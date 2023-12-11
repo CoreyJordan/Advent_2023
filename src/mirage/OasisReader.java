@@ -11,7 +11,7 @@ public class OasisReader extends data.FileReader {
 
     public ArrayList<Long> findReadings(String s) {
         ArrayList<Long> list = new ArrayList<>();
-        Pattern pattern = Pattern.compile("\\d+");
+        Pattern pattern = Pattern.compile("-?\\d+");
         Matcher matcher = pattern.matcher(s);
         while (matcher.find()) {
             list.add(Long.parseLong(matcher.group()));
