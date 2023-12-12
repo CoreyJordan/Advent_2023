@@ -30,25 +30,29 @@ public class Maze {
         int x = (int) current.getX();
         int y = (int) current.getY();
 
-        if (y < maze[x].length && (maze[x][y + 1] == '7' || maze[x][y + 1] == '-' || maze[x][y + 1] == 'J')) {
+        if (y + 1 < maze[x].length
+                && (maze[x][y + 1] == '7' || maze[x][y + 1] == '-' || maze[x][y + 1] == 'J' || maze[x][y + 1] == 'S')) {
             if (maze[x][y] == 'L' || maze[x][y] == '-' || maze[x][y] == 'F') {
                 availableDirections.add(Direction.NORTH);
             }
         }
 
-        if (y > 0 && (maze[x][y - 1] == 'L' || maze[x][y - 1] == '-' || maze[x][y - 1] == 'F')) {
+        if (y > 0
+                && (maze[x][y - 1] == 'L' || maze[x][y - 1] == '-' || maze[x][y - 1] == 'F' || maze[x][y - 1] == 'S')) {
             if (maze[x][y] == 'J' || maze[x][y] == '-' || maze[x][y] == '7') {
                 availableDirections.add(Direction.SOUTH);
             }
         }
 
-        if (x < maze.length && (maze[x + 1][y] == 'L' || maze[x + 1][y] == '|' || maze[x + 1][y] == 'J')) {
+        if (x + 1 < maze.length
+                && (maze[x + 1][y] == 'L' || maze[x + 1][y] == '|' || maze[x + 1][y] == 'J' || maze[x + 1][y] == 'S')) {
             if (maze[x][y] == '7' || maze[x][y] == '|' || maze[x][y] == 'F') {
                 availableDirections.add(Direction.EAST);
             }
         }
 
-        if (x > 0 && (maze[x - 1][y] == 'F' || maze[x - 1][y] == '|' || maze[x - 1][y] == '7')) {
+        if (x > 0
+                && (maze[x - 1][y] == 'F' || maze[x - 1][y] == '|' || maze[x - 1][y] == '7' || maze[x - 1][y] == 'S')) {
             if (maze[x][y] == 'L' || maze[x][y] == '|' || maze[x][y] == 'J') {
                 availableDirections.add(Direction.WEST);
             }
