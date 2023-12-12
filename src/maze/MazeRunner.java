@@ -11,6 +11,14 @@ public class MazeRunner {
         from = new Point();
     }
 
+    public Point getCurrent() {
+        return current;
+    }
+
+    public Point getFrom() {
+        return from;
+    }
+
     /**
      * Moves the runner in one of four cardinal directions. Movement is based
      * on a 2D plane with an x-axis and y-axis. If using a 2D array, North
