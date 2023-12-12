@@ -6,8 +6,8 @@ public class MazeRunner {
     private Point current;
     private Point from;
 
-    public MazeRunner(int x, int y) {
-        current = new Point(x, y);
+    public MazeRunner(Point point) {
+        current = new Point(point.getLocation());
         from = new Point();
     }
 
@@ -19,7 +19,7 @@ public class MazeRunner {
      * @param direction
      */
     public void move(Direction direction) {
-        from.setLocation(current.getX(), current.getY());
+        from.setLocation(current.getLocation());
         switch (direction) {
             case NORTH:
                 current.translate(0, 1);
