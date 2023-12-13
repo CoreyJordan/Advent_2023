@@ -67,8 +67,9 @@ public class Run {
         }
 
         maze.clearClutter();
+        maze.fillVoids();
         maze.printMaze();
-        // System.out.println(maze.countInside());
+        System.out.println(maze.countInside());
 
         // Part One
 

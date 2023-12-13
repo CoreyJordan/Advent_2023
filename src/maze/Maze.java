@@ -162,6 +162,22 @@ public class Maze {
         }
     }
 
+    public void fillVoids() {
+        boolean innerFill = false;
+
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze[i].length; j++) {
+                if (maze[i][j] == inside) {
+                    innerFill = true;
+                } else if (isPipe(maze[i][j])) {
+                    innerFill = false;
+                } else if (maze[i][j] == ' ' && innerFill) {
+                    maze[i][j] = inside;
+                }
+            }
+        }
+    }
+
     private boolean isPipe(char c) {
         if (c == upLeft || c == upRight || c == lowLeft || c == lowRight || c == vertical || c == horizontal) {
             return true;
