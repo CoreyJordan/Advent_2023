@@ -1,5 +1,6 @@
 package expansion;
 
+import java.awt.Point;
 import java.util.ArrayList;
 
 public class ImageProcessor {
@@ -49,15 +50,15 @@ public class ImageProcessor {
         return image;
     }
 
-    // public ArrayList<Point> plotGalaxies(ArrayList<String> image) {
-    // ArrayList<Point> galaxies = new ArrayList<>();
-    // for (int j = 0; j < image.size(); j++) {
-    // for (int i = 0; i < image.get(j).length(); i++) {
-    // if (image.get(j).charAt(i) == galaxy) {
-    // galaxies.add(new Point(j, i));
-    // }
-    // }
-    // }
-    // return galaxies;
-    // }
+    public ArrayList<Point> plotGalaxies() {
+        ArrayList<Point> galaxies = new ArrayList<>();
+        for (int j = 0; j < image.size(); j++) {
+            for (int i = 0; i < image.get(j).length(); i++) {
+                if (image.get(j).subSequence(i, i + 1).equals(galaxy)) {
+                    galaxies.add(new Point(j, i));
+                }
+            }
+        }
+        return galaxies;
+    }
 }
