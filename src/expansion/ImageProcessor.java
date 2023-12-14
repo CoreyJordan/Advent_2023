@@ -59,7 +59,7 @@ public class ImageProcessor {
         for (int j = 0; j < image.size(); j++) {
             for (int i = 0; i < image.get(j).length(); i++) {
                 if (image.get(j).subSequence(i, i + 1).equals(galaxy)) {
-                    galaxies.add(new Point(j, i));
+                    galaxies.add(new Point(i, j));
                 }
             }
         }

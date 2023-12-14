@@ -9,7 +9,7 @@ public class ImageProcessorVersion2 extends ImageProcessor {
         this.image = image;
     }
 
-    public ArrayList<Integer> findHorizontalExpansions() {
+    public ArrayList<Integer> findExpansionY() {
         ArrayList<Integer> expansions = new ArrayList<>();
         for (int i = 0; i < image.size(); i++) {
             if (!image.get(i).contains(galaxy)) {
@@ -19,7 +19,7 @@ public class ImageProcessorVersion2 extends ImageProcessor {
         return expansions;
     }
 
-    public ArrayList<Integer> findVerticalExpansions() {
+    public ArrayList<Integer> findExpansionX() {
         ArrayList<Integer> expansions = new ArrayList<>();
         boolean isEmpty;
         for (int i = 0; i < image.get(0).length(); i++) {
