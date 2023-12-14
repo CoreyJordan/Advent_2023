@@ -2,6 +2,7 @@ package expansion;
 
 import java.awt.Point;
 import java.util.ArrayList;
+import data.PointCalculator;
 
 public class PathFinder {
     public static void main(String[] args) {
@@ -12,6 +13,8 @@ public class PathFinder {
 
             ImageProcessor processor = new ImageProcessor(imageLines, GALAXY);
             ArrayList<Point> galaxies = processor.plotGalaxies();
+
+            PointCalculator calculator = new PointCalculator();
 
         } catch (Exception e) {
             System.out.println("Houston, we have a " + e.getMessage());
