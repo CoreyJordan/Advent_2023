@@ -3,13 +3,11 @@ package expansion;
 import java.awt.Point;
 import java.util.ArrayList;
 
-import data.FileReader;
-
 public class PathFinder {
     public static void main(String[] args) {
         final String GALAXY = "#";
 
-        try (FileReader reader = new FileReader("inputs/test.txt")) {
+        try (ImageReader reader = new ImageReader("inputs/test.txt")) {
             ArrayList<String> imageLines = reader.getLines();
 
             ImageProcessor processor = new ImageProcessor(imageLines, GALAXY);
