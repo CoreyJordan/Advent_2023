@@ -4,13 +4,17 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 public class ImageProcessor {
-    private String galaxy;
-    private ArrayList<String> image;
+    protected String galaxy;
+    protected ArrayList<String> image;
 
     public ImageProcessor(ArrayList<String> image, String galaxy) {
         this.image = image;
         this.galaxy = galaxy;
         expandImage();
+    }
+
+    public ImageProcessor() {
+        image = new ArrayList<>();
     }
 
     private void expandImage() {
