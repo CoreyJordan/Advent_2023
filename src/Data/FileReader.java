@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class FileReader {
+public class FileReader implements java.lang.AutoCloseable {
     private File file;
 
     public FileReader(String fileName) {
@@ -44,6 +44,11 @@ public class FileReader {
             }
         }
         return Long.parseLong(number);
+    }
+
+    @Override
+    public void close() throws Exception {
+        System.out.close();
     }
 
 }
